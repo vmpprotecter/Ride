@@ -1,0 +1,41 @@
+{
+  "name": "ride",
+  "productName": "Ride",
+  "version": "1.0.0",
+  "description": "Ride — R IDE. A fast code editor for Linux.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --linux",
+    "build:appimage": "electron-builder --linux AppImage",
+    "build:deb": "electron-builder --linux deb"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "monaco-editor": "0.45.0",
+    "node-pty": "1.0.0",
+    "xterm": "5.3.0",
+    "xterm-addon-fit": "0.8.0"
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "org.ride.ide",
+    "productName": "Ride",
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Development",
+      "icon": "assets/icon.png"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/.cache"
+    ]
+  }
+}
